@@ -7,9 +7,11 @@ import org.openqa.selenium.WebDriver;
 
 public class LoginPage {
 
-    WebDriver driver;
-    SeleniumHelper helper;
+    private WebDriver driver;
+    private SeleniumHelper helper;
     private final By emailField = By.name("email");
+    private final By passwordField = By.name("password");
+    private final By loginButton = By.className("button-action--save");
 
     public LoginPage(WebDriver driver) {
         this.driver = driver;
@@ -26,6 +28,15 @@ public class LoginPage {
         return this;
     }
 
+    public LoginPage enterPassword(String password) {
+        helper.findElement(passwordField).sendKeys(password);
+        return this;
+    }
+
+    public DashboardPage login() {
+        helper.findElement(loginButton).click();
+        return new DashboardPage(driver);
+    }
 
 
 }

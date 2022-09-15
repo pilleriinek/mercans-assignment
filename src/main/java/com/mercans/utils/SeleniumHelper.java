@@ -9,6 +9,9 @@ import org.openqa.selenium.support.ui.Wait;
 
 import java.time.Duration;
 
+/**
+ * Helper functions for Selenium
+ */
 public class SeleniumHelper {
 
     WebDriver driver;
