@@ -9,15 +9,22 @@ public class DashboardPage {
     private SeleniumHelper helper;
     private final By leaves = By.id("leaves");
     private final By myLeaves = By.linkText("My leaves");
+    private final By approvals = By.linkText("Approvals");
 
     public DashboardPage(WebDriver driver) {
         this.driver = driver;
         this.helper = new SeleniumHelper(driver);
     }
 
-    public LeavesPage openMyLeaves() {
+    public MyLeavesPage openMyLeaves() {
         helper.findElement(leaves).click();
         helper.findElement(myLeaves).click();
-        return new LeavesPage(driver);
+        return new MyLeavesPage(driver);
+    }
+
+    public ApprovalsPage openApprovals() {
+        helper.findElement(leaves).click();
+        helper.findElement(approvals).click();
+        return new ApprovalsPage(driver);
     }
 }

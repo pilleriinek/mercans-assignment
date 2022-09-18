@@ -16,7 +16,7 @@ public class BaseTest {
     @AfterMethod
     public void tearDown() {
         if (driver.toString() != null) {
-            driver.close();
+           driver.close();
         }
     }
 }

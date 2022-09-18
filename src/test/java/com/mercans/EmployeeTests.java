@@ -23,7 +23,9 @@ public class EmployeeTests extends BaseTest {
                 .enterEmail("demo+MR-00809@mercans.com")
                 .enterPassword("Employee1!")
                 .login()
-                .openMyLeaves();
+                .openMyLeaves()
+                .requestNewLeave()
+                .requestAnnualLeave();
 
 
     }
