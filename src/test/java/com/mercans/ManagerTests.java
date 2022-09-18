@@ -1,7 +1,7 @@
 package com.mercans;
 
 import com.mercans.pages.LoginPage;
-import org.testng.annotations.Test;
+import org.junit.jupiter.api.Test;
 
 public class ManagerTests extends BaseTest {
 

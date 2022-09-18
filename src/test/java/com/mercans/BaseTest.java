@@ -1,19 +1,20 @@
 package com.mercans;
 
 import com.mercans.runner.WebDriverRunner;
+import org.junit.jupiter.api.AfterEach;
+import org.junit.jupiter.api.BeforeEach;
 import org.openqa.selenium.WebDriver;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
+
 
 public class BaseTest {
     WebDriver driver;
 
-    @BeforeMethod
+    @BeforeEach
     public void setup() {
         driver = new WebDriverRunner().createWebDriver();
     }
 
-    @AfterMethod
+    @AfterEach
     public void tearDown() {
         if (driver.toString() != null) {
            driver.close();
